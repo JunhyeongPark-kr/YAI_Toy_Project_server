@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>입력 폼</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        #input_text {
+            width: 1000%;
+            height: 500%; /* 입력 창의 너비 */
+            padding: 10px; /* 입력 창 내부의 여백 */
+        }
+        button {
+            width: 50%; /* 버튼의 너비 */
+            padding: 10px; /* 버튼 내부의 여백 */
+            cursor: pointer; /* 마우스 커서 스타일 */
+        }
+        button:hover {
+            background-color: #f0f0f0; /* 버튼 호버 시 배경색 */
+        }
+    </style>
+</head>
+<body>
+    <h2>문장 입력</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" id="input_text" name="input_text" value="{{ input_text|default:'' }}" placeholder="여기에 문장을 입력하세요.">
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>

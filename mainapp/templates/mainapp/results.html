@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>결과 페이지</title>
+</head>
+<body>
+    <h2>결과</h2>
+    {% for result in results %}
+        <p><strong>입력 문장:</strong> {{ result.input_sentence }}</p>
+        <p><strong>유사한 문장:</strong> {{ result.similar_sentence }}</p>
+        <p><strong>유클리디언 거리:</strong> {{ result.distance }}</p>
+        <p><strong>코사인 유사도:</strong> {{ result.cosine_similarity }}</p>
+        <p><strong>TF-IDF 유사도:</strong> {{ result.tfidf_similarity }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
