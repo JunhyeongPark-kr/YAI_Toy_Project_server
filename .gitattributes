@@ -1,2 +1,4 @@
+models/STSmodel.h5/model.safetensors filter=lfs diff=lfs merge=lfs -text
+myenv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.dylib filter=lfs diff=lfs merge=lfs -text
 *.h5 filter=lfs diff=lfs merge=lfs -text
 *.dylib filter=lfs diff=lfs merge=lfs -text
